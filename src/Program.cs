@@ -1,4 +1,4 @@
-namespace IP_Address_Lookup
+namespace IP_Address_Lookup.src
 {
     internal static class Program
     {
