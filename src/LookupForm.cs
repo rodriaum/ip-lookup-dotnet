@@ -6,5 +6,12 @@ namespace IP_Address_Lookup
         {
             InitializeComponent();
         }
+
+        private void LookupForm_Load(object sender, EventArgs e) { }
+
+        private void AddressTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
