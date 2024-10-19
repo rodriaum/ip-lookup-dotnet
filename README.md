@@ -7,24 +7,24 @@ O **IP Address Lookup** é uma aplicação em Windows Forms que permite aos util
 ## Funcionalidades
 
 - Procura informações detalhadas sobre um endereço IP, incluindo:
-  - **ASN**: Sistema Autónomo do IP.
-  - **Range**: Intervalo de endereços IP.
-  - **Hostname**: Nome do host associado ao IP.
-  - **Organização**: Organização que possui o IP.
-  - **Continente**: Continente onde o IP está localizado.
+  - **ASN**:                  Sistema Autónomo do IP.
+  - **Range**:                Intervalo de endereços IP.
+  - **Hostname**:             Nome do host associado ao IP.
+  - **Organização**:          Organização que possui o IP.
+  - **Continente**:           Continente onde o IP está localizado.
   - **Código do Continente**: Código do continente (ex: NA para América do Norte).
-  - **País**: País onde o IP está localizado.
-  - **Código ISO**: Código ISO do país.
-  - **Região**: Região onde o IP está localizado.
-  - **Código da Região**: Código da região.
-  - **Fuso Horário**: Fuso horário associado ao IP.
-  - **Cidade**: Cidade onde o IP está localizado.
-  - **Código Postal**: Código postal da localização.
-  - **Latitude**: Latitude da localização do IP.
-  - **Longitude**: Longitude da localização do IP.
-  - **Moeda**: Informações sobre a moeda da região.
-  - **Proxy**: Indica se o IP é um proxy.
-  - **Tipo**: Tipo de IP (ex: IPv4, IPv6).
+  - **País**:                 País onde o IP está localizado.
+  - **Código ISO**:           Código ISO do país.
+  - **Região**:               Região onde o IP está localizado.
+  - **Código da Região**:     Código da região.
+  - **Fuso Horário**:         Fuso horário associado ao IP.
+  - **Cidade**:               Cidade onde o IP está localizado.
+  - **Código Postal**:        Código postal da localização.
+  - **Latitude**:             Latitude da localização do IP.
+  - **Longitude**:            Longitude da localização do IP.
+  - **Moeda**:                Informações sobre a moeda da região.
+  - **Proxy**:                Indica se o IP é um proxy.
+  - **Tipo**:                 Tipo de IP (ex: IPv4, IPv6).
 
 ## Como Usar
 
