@@ -41,6 +41,7 @@ namespace IP_Address_Lookup
             // 
             // addressCaptionLabel
             // 
+            addressCaptionLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             addressCaptionLabel.AutoSize = true;
             addressCaptionLabel.BackColor = Color.FromArgb(20, 21, 40);
             addressCaptionLabel.Font = new Font("Segoe UI Variable Display", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -53,6 +54,7 @@ namespace IP_Address_Lookup
             // 
             // titleLabel
             // 
+            titleLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             titleLabel.AutoSize = true;
             titleLabel.Font = new Font("Segoe UI Variable Small Semibol", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             titleLabel.ForeColor = Color.White;
@@ -64,6 +66,7 @@ namespace IP_Address_Lookup
             // 
             // backPictureBox
             // 
+            backPictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             backPictureBox.BackColor = Color.FromArgb(15, 19, 32);
             backPictureBox.BorderStyle = BorderStyle.FixedSingle;
             backPictureBox.Location = new Point(12, 94);
@@ -74,6 +77,7 @@ namespace IP_Address_Lookup
             // 
             // resultCustomListBox
             // 
+            resultCustomListBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             resultCustomListBox.BackColor = Color.FromArgb(15, 19, 32);
             resultCustomListBox.BorderStyle = BorderStyle.None;
             resultCustomListBox.Font = new Font("Segoe UI Symbol", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -88,6 +92,7 @@ namespace IP_Address_Lookup
             // 
             // addressTextBox
             // 
+            addressTextBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             addressTextBox.BackColor = Color.FromArgb(15, 19, 32);
             addressTextBox.BorderStyle = BorderStyle.None;
             addressTextBox.Font = new Font("Segoe UI Variable Display", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -98,7 +103,7 @@ namespace IP_Address_Lookup
             addressTextBox.Size = new Size(400, 35);
             addressTextBox.TabIndex = 4;
             addressTextBox.TextAlign = HorizontalAlignment.Center;
-            addressTextBox.KeyDown += AddressTextBox_KeyDown;
+            addressTextBox.KeyDown += AddressTextBox_KeyDownAsync;
             // 
             // LookupForm
             // 
@@ -111,8 +116,9 @@ namespace IP_Address_Lookup
             Controls.Add(titleLabel);
             Controls.Add(addressTextBox);
             Controls.Add(addressCaptionLabel);
+            MaximizeBox = false;
             Name = "LookupForm";
-            Text = "LookupForm";
+            Text = "Informações: Endereço IP";
             Load += LookupForm_Load;
             ((System.ComponentModel.ISupportInitialize)backPictureBox).EndInit();
             ResumeLayout(false);
