@@ -46,6 +46,7 @@ namespace IP_Address_Lookup
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LookupForm));
             addressCaptionLabel = new Label();
             titleLabel = new Label();
             backPictureBox = new PictureBox();
@@ -146,6 +147,7 @@ namespace IP_Address_Lookup
             Controls.Add(titleLabel);
             Controls.Add(addressTextBox);
             Controls.Add(addressCaptionLabel);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "LookupForm";
             Text = "Informações: Endereço IP";
