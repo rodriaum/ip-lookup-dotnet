@@ -31,5 +31,18 @@ namespace IP_Address_Lookup.src.Request
                 return null;
             }
         }
+
+        public async Task<string?> GetProxyCheckJson(string address, string token)
+        {
+            try
+            {
+                return await _client.GetStringAsync(string.Format(Constant.PROXY_CHECK_V2_API, address, token));
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message, "Ops!");
+                return null;
+            }
+        }
     }
 }

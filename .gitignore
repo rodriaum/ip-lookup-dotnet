@@ -480,6 +480,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Dot Env
+*.env
+.env
+
 ### VisualStudio ###
 
 # User-specific files

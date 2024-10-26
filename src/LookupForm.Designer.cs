@@ -51,6 +51,7 @@ namespace IP_Address_Lookup
             backPictureBox = new PictureBox();
             resultCustomListBox = new CustomListBox();
             addressTextBox = new RoundedTextBox();
+            statusLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)backPictureBox).BeginInit();
             SuspendLayout();
             // 
@@ -120,12 +121,26 @@ namespace IP_Address_Lookup
             addressTextBox.TextAlign = HorizontalAlignment.Center;
             addressTextBox.KeyDown += AddressTextBox_KeyDownAsync;
             // 
+            // statusLabel
+            // 
+            statusLabel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            statusLabel.AutoSize = true;
+            statusLabel.BackColor = Color.FromArgb(20, 21, 40);
+            statusLabel.Font = new Font("Candara", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            statusLabel.ForeColor = SystemColors.ScrollBar;
+            statusLabel.Location = new Point(12, 78);
+            statusLabel.Name = "statusLabel";
+            statusLabel.Size = new Size(0, 13);
+            statusLabel.TabIndex = 5;
+            statusLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // LookupForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(20, 21, 40);
             ClientSize = new Size(800, 450);
+            Controls.Add(statusLabel);
             Controls.Add(resultCustomListBox);
             Controls.Add(backPictureBox);
             Controls.Add(titleLabel);
@@ -147,5 +162,6 @@ namespace IP_Address_Lookup
         private PictureBox backPictureBox;
         private CustomListBox resultCustomListBox;
         private RoundedTextBox addressTextBox;
+        private Label statusLabel;
     }
 }

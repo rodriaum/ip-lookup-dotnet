@@ -13,11 +13,12 @@
  * Copyright (c) 2024 Rodrigo Ferreira
  */
 
-namespace IP_Address_Lookup.src.Objects
+namespace ProxyCheck.Objects
 {
-    internal class Constant
+    public class Currecy
     {
-        public static readonly string PROXY_CHECK_V2_API = "https://proxycheck.io/v2/{0}?key={1}?vpn=1&asn=1";
-        public static readonly string IPIFY_API = "https://api.ipify.org/";
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string Symbol { get; set; }
     }
 }
