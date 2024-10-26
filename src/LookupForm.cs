@@ -59,12 +59,15 @@ namespace IP_Address_Lookup
 
         private async Task<string?> GetAddressAsync()
         {
-            string? address = addressTextBox.Text;
+            string? address = addressTextBox.Text
+                .Replace("\n", ""); // TextBox Multiline
+
             if (string.IsNullOrEmpty(address))
             {
                 AddressRequest request = new AddressRequest();
                 address = await request.GetPublicIP();
             }
+
             return address;
         }
 
@@ -94,8 +97,8 @@ namespace IP_Address_Lookup
 
         private void DisplayAddressInfo(AddressResponse response)
         {
-            resultCustomListBox.Items.Clear();
             resultCustomListBox.Items.Add("Pedido retornado com sucesso.");
+            resultCustomListBox.Items.Clear();
 
             AddressInfoResponse? proxy = response.Proxies.Values.FirstOrDefault();
             if (proxy == null)

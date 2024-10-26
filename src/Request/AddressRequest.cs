@@ -27,7 +27,7 @@ namespace IP_Address_Lookup.src.Request
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Ops!");
+                MessageBox.Show(e.Message, "Ops! IP");
                 return null;
             }
         }
@@ -40,7 +40,7 @@ namespace IP_Address_Lookup.src.Request
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Ops!");
+                MessageBox.Show(e.Message, "Ops! ProxyCheck");
                 return null;
             }
         }
