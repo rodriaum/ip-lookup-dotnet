@@ -8,7 +8,7 @@
  * For more details about the MIT License and its terms, please refer to:
  * https://github.com/rodriaum/IP-Address-Lookup?tab=MIT-1-ov-file#readme
  * 
- * This project is an IP address lookup system developed in C#. Contributions are welcome!
+ * This project is an IP address lookup system developed in C#.
  * 
  * Copyright (c) 2024 Rodrigo Ferreira
  */

@@ -8,7 +8,7 @@
  * For more details about the MIT License and its terms, please refer to:
  * https://github.com/rodriaum/IP-Address-Lookup?tab=MIT-1-ov-file#readme
  * 
- * This project is an IP address lookup system developed in C#. Contributions are welcome!
+ * This project is an IP address lookup system developed in C#.
  * 
  * Copyright (c) 2024 Rodrigo Ferreira
  */
@@ -25,9 +25,21 @@ namespace ProxyCheck.Util
         {
             JObject obj = JObject.Load(reader);
 
+            if (obj == null)
+            {
+                throw new JsonSerializationException("Invalid JSON object.");
+            }
+
+            JToken? status = obj["status"];
+
+            if (status == null)
+            {
+                throw new JsonSerializationException("Invalid JSON token.");
+            }
+
             var response = new AddressResponse
             {
-                Status = Utils.GetStatusByName(obj["status"].ToString()).GetValueOrDefault(),
+                Status = Utils.GetStatusByName(status.ToString()).GetValueOrDefault(),
                 Proxies = new Dictionary<string, AddressInfoResponse>()
             };
 
