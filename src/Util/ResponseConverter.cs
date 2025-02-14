@@ -48,30 +48,29 @@ namespace ProxyCheck.Util
 
             foreach (var property in obj.Properties())
             {
-                if (property.Name != "status")
+                if (property.Name == "status") continue;
+
+                JToken? token = property.Value;
+
+                if (token == null)
                 {
-                    JToken? token = property.Value;
-
-                    if (token == null)
-                    {
-                        Utils.MessageBox("Não foi possível obter o token JSON.");
-                        continue;
-                    }
-
-                    AddressInfoResponse? info = null;
-
-                    try
-                    {
-                        info = token.ToObject<AddressInfoResponse>();
-                    }
-                    catch (Exception ex)
-                    {
-                        Utils.MessageBox("Não foi possível converter para um objeto JSON.", ex.Message);
-                        continue;
-                    }
-
-                    response.Proxies[property.Name] = info;
+                    Utils.MessageBox("Não foi possível obter o token JSON.");
+                    continue;
                 }
+
+                AddressInfoResponse? info = null;
+
+                try
+                {
+                    info = token.ToObject<AddressInfoResponse>();
+                }
+                catch (Exception ex)
+                {
+                    Utils.MessageBox("Não foi possível converter para um objeto JSON.", ex.Message);
+                    continue;
+                }
+
+                response.Proxies[property.Name] = info;
             }
 
             return response;

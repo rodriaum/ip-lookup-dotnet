@@ -50,12 +50,47 @@ namespace ProxyCheck.Util
 
                 foreach (var property in properties)
                 {
-                    dictionary.Add(property.Name, property.GetValue(obj));
+                    var value = property.GetValue(obj);
+                    if (value != null && IsComplexType(property.PropertyType))
+                    {
+                        dictionary[property.Name] = GetProperties(value);
+                    }
+                    else
+                    {
+                        dictionary[property.Name] = value;
+                    }
                 }
             }
             catch (Exception) { }
 
             return dictionary;
+        }
+
+        public static List<string> FormatProperties(Dictionary<string, object?> properties, int indentLevel = 0, bool isSubClass = false)
+        {
+            List<string> list = new List<string>();
+            string indent = new string(' ', indentLevel * 4);
+
+            foreach (var property in properties)
+            {
+                if (property.Value is Dictionary<string, object?> subProperties)
+                {
+                    list.Add($"{indent}{property.Key}:");
+                    list.AddRange(FormatProperties(subProperties, indentLevel + 1, true));
+                }
+                else
+                {
+                    string prefix = isSubClass ? "- " : "";
+                    list.Add($"{indent}{prefix}{property.Key}: {property.Value}");
+                }
+            }
+
+            return list;
+        }
+
+        public static bool IsComplexType(Type type)
+        {
+            return type.IsClass && type != typeof(string);
         }
     }
 }

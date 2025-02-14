@@ -138,10 +138,11 @@ namespace IP_Address_Lookup
 
             statusLabel.Text = response.Status.ToString();
 
-            foreach (var property in Utils.GetProperties(proxy))
+            foreach (var line in Utils.FormatProperties(Utils.GetProperties(proxy)))
             {
-                resultCustomListBox.Items.Add($"{property.Key}: {property.Value}");
+                resultCustomListBox.Items.Add(line);
             }
         }
+
     }
 }
