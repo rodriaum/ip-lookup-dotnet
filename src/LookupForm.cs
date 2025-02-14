@@ -87,7 +87,7 @@ namespace IP_Address_Lookup
 
         private string? GetApiToken()
         {
-            string? token = DotNetEnv.Env.GetString("PROXY_CHECK_API_KEY", "8iu073-5604p9-311of6-rn2371");
+            string? token = DotNetEnv.Env.GetString("PROXY_CHECK_API_KEY");
 
             if (string.IsNullOrEmpty(token))
             {
