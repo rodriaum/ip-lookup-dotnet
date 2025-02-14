@@ -120,7 +120,15 @@ namespace IP_Address_Lookup
             resultCustomListBox.Items.Add("Pedido retornado com sucesso.");
             resultCustomListBox.Items.Clear();
 
-            AddressInfoResponse? proxy = response.Proxies.Values.FirstOrDefault();
+            Dictionary<string, AddressInfoResponse>? proxies = response.Proxies;
+
+            if (proxies == null)
+            {
+                resultCustomListBox.Items.Add("Não foi possível pegar as informações dos proxies.");
+                return;
+            }
+
+            AddressInfoResponse? proxy = proxies.Values.FirstOrDefault();
 
             if (proxy == null)
             {
