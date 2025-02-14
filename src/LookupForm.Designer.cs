@@ -69,10 +69,10 @@ namespace IP_Address_Lookup
             addressCaptionLabel.BackColor = Color.FromArgb(20, 21, 40);
             addressCaptionLabel.Font = new Font(this.font, 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addressCaptionLabel.ForeColor = SystemColors.ScrollBar;
-            addressCaptionLabel.Location = new Point(210, 350);
+            addressCaptionLabel.Location = new Point(214, 485);
             addressCaptionLabel.Name = "addressCaptionLabel";
             addressCaptionLabel.Size = new Size(166, 20);
-            addressCaptionLabel.TabIndex = 0;
+            addressCaptionLabel.TabIndex = 3;
             addressCaptionLabel.Text = "Insira o seu endereço IP";
             // 
             // titleLabel
@@ -85,7 +85,7 @@ namespace IP_Address_Lookup
             titleLabel.Location = new Point(330, 28);
             titleLabel.Name = "titleLabel";
             titleLabel.Size = new Size(153, 36);
-            titleLabel.TabIndex = 1;
+            titleLabel.TabIndex = 4;
             titleLabel.Text = "IP LOOKUP";
             // 
             // backPictureBox
@@ -95,8 +95,8 @@ namespace IP_Address_Lookup
             backPictureBox.BorderStyle = BorderStyle.FixedSingle;
             backPictureBox.Location = new Point(12, 94);
             backPictureBox.Name = "backPictureBox";
-            backPictureBox.Size = new Size(776, 200);
-            backPictureBox.TabIndex = 2;
+            backPictureBox.Size = new Size(776, 342);
+            backPictureBox.TabIndex = 5;
             backPictureBox.TabStop = false;
             // 
             // resultCustomListBox
@@ -111,8 +111,8 @@ namespace IP_Address_Lookup
             resultCustomListBox.Location = new Point(47, 124);
             resultCustomListBox.Name = "resultCustomListBox";
             resultCustomListBox.SelectionMode = SelectionMode.None;
-            resultCustomListBox.Size = new Size(703, 140);
-            resultCustomListBox.TabIndex = 3;
+            resultCustomListBox.Size = new Size(703, 285);
+            resultCustomListBox.TabIndex = 2;
             // 
             // addressTextBox
             // 
@@ -121,11 +121,11 @@ namespace IP_Address_Lookup
             addressTextBox.BorderStyle = BorderStyle.None;
             addressTextBox.Font = new Font(this.font, 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
             addressTextBox.ForeColor = Color.White;
-            addressTextBox.Location = new Point(200, 380);
+            addressTextBox.Location = new Point(204, 510);
             addressTextBox.Multiline = true;
             addressTextBox.Name = "addressTextBox";
             addressTextBox.Size = new Size(400, 35);
-            addressTextBox.TabIndex = 4;
+            addressTextBox.TabIndex = 1;
             addressTextBox.TextAlign = HorizontalAlignment.Center;
             addressTextBox.KeyDown += AddressTextBox_KeyDownAsync;
             // 
@@ -139,7 +139,7 @@ namespace IP_Address_Lookup
             statusLabel.Location = new Point(12, 78);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new Size(0, 13);
-            statusLabel.TabIndex = 5;
+            statusLabel.TabIndex = 6;
             statusLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // LookupForm
@@ -147,7 +147,7 @@ namespace IP_Address_Lookup
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(20, 21, 40);
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 580);
             Controls.Add(statusLabel);
             Controls.Add(resultCustomListBox);
             Controls.Add(backPictureBox);

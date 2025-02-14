@@ -2,7 +2,7 @@
 
 O **IP Address Lookup** é uma aplicação em Windows Forms que permite aos utilizadores consultar informações detalhadas sobre um endereço IP específico. Com esta ferramenta, pode obter dados como localização geográfica, informações da organização e muito mais.
 
-![IP Address Lookup](https://i.imgur.com/ynqWWJf.png)
+![IP Address Lookup](https://i.imgur.com/QaZj6CA.png)
 
 ## Funcionalidades
 
