@@ -13,9 +13,9 @@
  * Copyright (c) 2024 Rodrigo Ferreira
  */
 
-namespace ProxyCheck.Objects
+namespace IP_Address_Lookup.src.Request.Response.Info
 {
-    public class Currecy
+    public class CurrecyInfo
     {
         public string? Code { get; set; }
         public string? Name { get; set; }

@@ -13,13 +13,11 @@
  * Copyright (c) 2024 Rodrigo Ferreira
  */
 
-using IP_Address_Lookup.src.Request.Response.Info;
-
-namespace ProxyCheck.Objects
+namespace IP_Address_Lookup.src.Request.Response.Info
 {
-    public class AddressResponse
+    public class DevicesInfo
     {
-        public StatusResult Status { get; set; }
-        public Dictionary<string, AddressInfoResponse>? Proxies { get; set; }
+        public int? Address { get; set; }
+        public string? Subnet { get; set; }
     }
 }

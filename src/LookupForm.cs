@@ -14,6 +14,7 @@
  */
 
 using IP_Address_Lookup.src.Request;
+using IP_Address_Lookup.src.Request.Response.Info;
 using Newtonsoft.Json;
 using ProxyCheck.Objects;
 using ProxyCheck.Util;

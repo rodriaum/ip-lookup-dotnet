@@ -16,6 +16,7 @@
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using ProxyCheck.Objects;
+using IP_Address_Lookup.src.Request.Response.Info;
 
 namespace ProxyCheck.Util
 {
