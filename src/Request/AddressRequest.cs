@@ -14,20 +14,24 @@
  */
 
 using IP_Address_Lookup.src.Objects;
+using ProxyCheck.Util;
 
 namespace IP_Address_Lookup.src.Request
 {
     internal class AddressRequest : BaseRequest
     {
+        // Cached Public IP Address
+        private string? Address { get; set; }
+
         public async Task<string?> GetPublicIP()
         {
             try
             {
-                return await _client.GetStringAsync(Constant.IPIFY_API);
+                return (!string.IsNullOrEmpty(Address) ? Address : await _client.GetStringAsync(Constant.IpifyAPI));
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Ops! IP");
+                Utils.MessageBox(e.Message, "Ops! Não foi possível obter o IP da máquina.");
                 return null;
             }
         }
@@ -36,11 +40,11 @@ namespace IP_Address_Lookup.src.Request
         {
             try
             {
-                return await _client.GetStringAsync(string.Format(Constant.PROXY_CHECK_V2_API, address, token));
+                return await _client.GetStringAsync(string.Format(Constant.ProxyCheckAPI, address, token));
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message, "Ops! ProxyCheck");
+                Utils.MessageBox($"Ops! Não foi possível solicitar as informações do IP: {address}", e.Message);
                 return null;
             }
         }

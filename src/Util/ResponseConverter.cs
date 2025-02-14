@@ -27,14 +27,16 @@ namespace ProxyCheck.Util
 
             if (obj == null)
             {
-                throw new JsonSerializationException("Invalid JSON object.");
+                Utils.MessageBox("Não foi possível ler um objeto JSON.");
+                return null;
             }
 
             JToken? status = obj["status"];
 
             if (status == null)
             {
-                throw new JsonSerializationException("Invalid JSON token.");
+                Utils.MessageBox("Não foi possível ler um token JSON.");
+                return null;
             }
 
             var response = new AddressResponse
@@ -47,8 +49,27 @@ namespace ProxyCheck.Util
             {
                 if (property.Name != "status")
                 {
-                    var proxyInfo = property.Value.ToObject<AddressInfoResponse>();
-                    response.Proxies[property.Name] = proxyInfo;
+                    JToken? token = property.Value;
+
+                    if (token == null)
+                    {
+                        Utils.MessageBox("Não foi possível obter o token JSON.");
+                        continue;
+                    }
+
+                    AddressInfoResponse? info = null;
+
+                    try
+                    {
+                        info = token.ToObject<AddressInfoResponse>();
+                    }
+                    catch (Exception ex)
+                    {
+                        Utils.MessageBox("Não foi possível converter para um objeto JSON.", ex.Message);
+                        continue;
+                    }
+
+                    response.Proxies[property.Name] = info;
                 }
             }
 

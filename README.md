@@ -35,6 +35,18 @@ O **IP Address Lookup** é uma aplicação em Windows Forms que permite aos util
 3. Compile e execute a aplicação.
 4. Insira o endereço IP que deseja consultar na interface da aplicação e pressione o botão para obter as informações.
 
+## Variáveis Secretas
+Este projeto utiliza variáveis de ambiente para armazenar credenciais sensíveis. Certifique-se de definir corretamente essas variáveis antes de executar o sistema.
+
+No Linux/macOS (bash/zsh)
+```shell
+export PROXY_CHECK_API_KEY="your_token"
+```
+
+No Windows (PowerShell)
+```shell
+$env:PROXY_CHECK_API_KEY="your_token"
+```
 
 ## Licença
 

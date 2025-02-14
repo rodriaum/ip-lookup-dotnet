@@ -17,7 +17,10 @@ namespace IP_Address_Lookup.src.Objects
 {
     internal class Constant
     {
-        public static readonly string PROXY_CHECK_V2_API = "https://proxycheck.io/v2/{0}?key={1}?vpn=1&asn=1";
-        public static readonly string IPIFY_API = "https://api.ipify.org/";
+        public static readonly string ProxyCheckAPI = "https://proxycheck.io/v2/{0}?key={1}?vpn=1&asn=1";
+        public static readonly string IpifyAPI = "https://api.ipify.org/";
+
+        // Set this to false if not in test mode.
+        public static readonly bool DebugMode = false;
     }
 }

@@ -17,21 +17,21 @@ namespace ProxyCheck.Objects
 {
     public class AddressInfoResponse
     {
-        public string ASN { get; set; }
-        public string Range { get; set; }
-        public string Provider { get; set; }
-        public string Organisation { get; set; }
-        public string Continent { get; set; }
-        public string ContinentCode { get; set; }
-        public string ISOCode { get; set; }
-        public string Region { get; set; }
-        public string RegionCode { get; set; }
-        public string Timezone { get; set; }
-        public string City { get; set; }
-        public long Latitude { get; set; }
-        public long Longitude { get; set; }
-        public Currecy Currecy { get; set; }
-        public string Proxy { get; set; }
-        public string Type { get; set; }
+        public string? ASN { get; set; }
+        public string? Range { get; set; }
+        public string? Provider { get; set; }
+        public string? Organisation { get; set; }
+        public string? Continent { get; set; }
+        public string? ContinentCode { get; set; }
+        public string? ISOCode { get; set; }
+        public string? Region { get; set; }
+        public string? RegionCode { get; set; }
+        public string? Timezone { get; set; }
+        public string? City { get; set; }
+        public long? Latitude { get; set; }
+        public long? Longitude { get; set; }
+        public Currecy? Currecy { get; set; }
+        public string? Proxy { get; set; }
+        public string? Type { get; set; }
     }
 }

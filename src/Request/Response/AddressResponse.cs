@@ -18,6 +18,6 @@ namespace ProxyCheck.Objects
     public class AddressResponse
     {
         public StatusResult Status { get; set; }
-        public Dictionary<string, AddressInfoResponse> Proxies { get; set; }
+        public Dictionary<string, AddressInfoResponse>? Proxies { get; set; }
     }
 }

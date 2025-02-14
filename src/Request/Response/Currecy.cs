@@ -17,8 +17,8 @@ namespace ProxyCheck.Objects
 {
     public class Currecy
     {
-        public string Code { get; set; }
-        public string Name { get; set; }
-        public string Symbol { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
+        public string? Symbol { get; set; }
     }
 }

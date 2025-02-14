@@ -17,6 +17,7 @@ using IP_Address_Lookup.src.Request;
 using Newtonsoft.Json;
 using ProxyCheck.Objects;
 using ProxyCheck.Util;
+using System.Text.RegularExpressions;
 
 namespace IP_Address_Lookup
 {
@@ -62,29 +63,46 @@ namespace IP_Address_Lookup
             string? address = addressTextBox.Text
                 .Replace("\n", ""); // TextBox Multiline
 
-            if (string.IsNullOrEmpty(address))
+            if (string.IsNullOrWhiteSpace(address))
             {
                 AddressRequest request = new AddressRequest();
                 address = await request.GetPublicIP();
             }
+
+            // If it is still null, it returns nothing.
+            if (address == null) return null;
+
+            if (!Regex.IsMatch(address, @"^(?:\d{1,3}\.){3}\d{1,3}$"))
+            {
+                MessageBox.Show("O endereço deve estar no formato correto (ex: 192.168.1.1)");
+                return null;
+            }
+
+            // As it is a Multiline TextBox, when you press enter the line will break
+            // and the old IP will remain on top, which is why we clear the TextBox.
+            addressTextBox.Clear();
 
             return address;
         }
 
         private string? GetApiToken()
         {
-            string? token = Environment.GetEnvironmentVariable("PROXY_CHECK_API_KEY");
+            string? token = DotNetEnv.Env.GetString("PROXY_CHECK_API_KEY", "8iu073-5604p9-311of6-rn2371");
+
             if (string.IsNullOrEmpty(token))
             {
-                resultCustomListBox.Items.Add("Não foi possível pegar o token da API.");
+                resultCustomListBox.Items.Add("Não foi possível obter o token da API ProxyCheck.");
             }
+
             return token;
         }
 
         private async Task<AddressResponse?> GetAddressInfoAsync(string address, string token)
         {
             AddressRequest request = new AddressRequest();
+
             var json = await request.GetProxyCheckJson(address, token);
+
             if (json == null)
             {
                 resultCustomListBox.Items.Add("Não foi possível pegar o resultado da resposta da API.");
@@ -92,6 +110,7 @@ namespace IP_Address_Lookup
             }
 
             resultCustomListBox.Items.Add("A iniciar pedido de informações ao endereço IP...");
+
             return JsonConvert.DeserializeObject<AddressResponse>(json, new ResponseConverter());
         }
 
@@ -101,6 +120,7 @@ namespace IP_Address_Lookup
             resultCustomListBox.Items.Clear();
 
             AddressInfoResponse? proxy = response.Proxies.Values.FirstOrDefault();
+
             if (proxy == null)
             {
                 resultCustomListBox.Items.Add("Não foi possível pegar as informações do proxy.");
@@ -108,6 +128,7 @@ namespace IP_Address_Lookup
             }
 
             statusLabel.Text = response.Status.ToString();
+
             foreach (var property in Utils.GetProperties(proxy))
             {
                 resultCustomListBox.Items.Add($"{property.Key}: {property.Value}");

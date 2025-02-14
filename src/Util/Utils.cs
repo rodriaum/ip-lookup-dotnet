@@ -13,6 +13,7 @@
  * Copyright (c) 2024 Rodrigo Ferreira
  */
 
+using IP_Address_Lookup.src.Objects;
 using ProxyCheck.Objects;
 using System.Reflection;
 
@@ -20,6 +21,11 @@ namespace ProxyCheck.Util
 {
     public class Utils
     {
+
+        public static DialogResult MessageBox(string message, string extra = "")
+        {
+            return System.Windows.Forms.MessageBox.Show((message + (!string.IsNullOrEmpty(extra) && Constant.DebugMode ? $"\n\n{extra}" : "")), (Constant.DebugMode ? "Debug" : "Ops"));
+        }
         public static StatusResult? GetStatusByName(string name)
         {
             foreach (StatusResult status in Enum.GetValues(typeof(StatusResult)))
