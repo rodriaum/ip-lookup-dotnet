@@ -50,4 +50,4 @@ $env:PROXY_CHECK_API_KEY="your_token"
 
 ## Licença
 
-Este projeto é licenciado sob a [MIT License](https://github.com/rodriaum/IP-Address-Lookup?tab=MIT-1-ov-file#MIT-1-ov-file).
+Este projeto é licenciado sob a [MIT License](https://github.com/rodriaum/ip-lookup-dotnet?tab=MIT-1-ov-file#MIT-1-ov-file).
